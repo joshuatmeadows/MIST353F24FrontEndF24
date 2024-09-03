@@ -20,3 +20,19 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+h3 {
+    color:#002855;
+    background-color:#EAAA00;
+    font-family:'Times New Roman';
+    text-align:center;
+    font-size:72px";
+}
+
+.wvuclass {
+    color: #002855;
+    background-color: #EAAA00;
+    font-family: 'Times New Roman';
+    text-align: center;
+    font-size: 72px";
+}
