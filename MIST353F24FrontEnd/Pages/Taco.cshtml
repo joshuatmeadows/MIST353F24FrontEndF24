@@ -9,7 +9,7 @@
 </a>
 
 <button onclick="hidethetaco()" id="hidetacobtn">Hide the taco</button>
-<button style="display:none;" id="showtacobtn" onclick="showthetaco()">Show the taco</button>
+<!--<button style="display:none;" id="showtacobtn" onclick="showthetaco()">Show the taco</button>-->
 
 <h2 style="color:#002855;background-color:#EAAA00;font-family:'Times New Roman';text-align:center; font-size:72px">
     Stores near you
@@ -39,16 +39,26 @@
 </div>
 
 <script>
+    let istacohidden = 0;
     function hidethetaco() {
-        document.getElementById("tacopic").style.display = "none";
-        document.getElementById("hidetacobtn").style.display = "none";
-        document.getElementById("showtacobtn").style.display = "block";
+        if (istacohidden == 0) { 
+            document.getElementById("tacopic").style.display = "none";
+            document.getElementById("hidetacobtn").innerHTML = "Show the taco";
+            istacohidden = 1;
+        }
+        else {
+            document.getElementById("tacopic").style.display = "block";
+            document.getElementById("hidetacobtn").innerHTML = "Hide the taco";
+            istacohidden = 0;
+        }
     }
 
     function showthetaco() {
         document.getElementById("tacopic").style.display = "block";
-        document.getElementById("showtacobtn").style.display = "none";
-        document.getElementById("hidetacobtn").style.display = "block";
+        document.getElementById("hidetacobtn").innerHTML = "Hide the taco";
+        document.getElementById("hidetacobtn").onclick = "hidethetaco()";
     }
 
 </script>
+
+GoToClass
