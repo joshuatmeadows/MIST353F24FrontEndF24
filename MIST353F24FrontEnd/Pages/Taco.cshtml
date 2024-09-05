@@ -4,7 +4,12 @@
 }
 
 <h1> Taco  </h1>
-<a href="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvam9iNjc4LTAyNC1wLWwxNjRwc216LnBuZw.png"><img src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvam9iNjc4LTAyNC1wLWwxNjRwc216LnBuZw.png" alt="A taco" /></a>
+<a href="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvam9iNjc4LTAyNC1wLWwxNjRwc216LnBuZw.png">
+    <img src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvam9iNjc4LTAyNC1wLWwxNjRwc216LnBuZw.png" alt="A taco" id="tacopic" />
+</a>
+
+<button onclick="hidethetaco()" id="hidetacobtn">Hide the taco</button>
+<button style="display:none;" id="showtacobtn" onclick="showthetaco()">Show the taco</button>
 
 <h2 style="color:#002855;background-color:#EAAA00;font-family:'Times New Roman';text-align:center; font-size:72px">
     Stores near you
@@ -32,3 +37,18 @@
         <li>They got that seasoning</li>
     </ol>
 </div>
+
+<script>
+    function hidethetaco() {
+        document.getElementById("tacopic").style.display = "none";
+        document.getElementById("hidetacobtn").style.display = "none";
+        document.getElementById("showtacobtn").style.display = "block";
+    }
+
+    function showthetaco() {
+        document.getElementById("tacopic").style.display = "block";
+        document.getElementById("showtacobtn").style.display = "none";
+        document.getElementById("hidetacobtn").style.display = "block";
+    }
+
+</script>
