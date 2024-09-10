@@ -1,0 +1,33 @@
+﻿@page
+@model MIST353F24FrontEnd.Pages.searchModel
+@{
+}
+<input id="searchfld" value="honda" class="form-control" />
+
+<button typeof="button" onclick="searchManuf();" class="btn btn-primary" >Search</button>
+
+<div id="searchResultsDiv">
+
+
+</div>
+
+<script>
+    function searchManuf() {
+        const carInfo = [{ model: "honda", make: "civic", year: "2002" }, { model: "toyota", make: "tundra", year: "2023" }];
+
+        let searchTerms = document.getElementById("searchfld").value;
+
+        if (searchTerms == "honda") {
+            document.getElementById("searchResultsDiv").innerHTML = carInfo[0].make;
+        }
+        else if (searchTerms == "toyota") {
+            document.getElementById("searchResultsDiv").innerHTML = carInfo[1].year +" " +carInfo[1].make;
+        }
+        else {
+            document.getElementById("searchResultsDiv").innerHTML = "ya stupid";
+        }
+
+
+        //document.getElementById("searchResultsDiv").innerHTML = "You searched for: " + searchTerms;
+    }
+</script>
