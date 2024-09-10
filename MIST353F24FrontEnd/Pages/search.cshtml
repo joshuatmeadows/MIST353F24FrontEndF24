@@ -12,16 +12,18 @@
 </div>
 
 <script>
-    function searchManuf() {
-        const carInfo = [{ model: "honda", make: "civic", year: "2002" }, { model: "toyota", make: "tundra", year: "2023" }];
+    async function searchManuf() {
+        let pageNum = "2";
+        const carInfo = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&page=${pageNum}`)
+        const carInfoJson = await carInfo.json();
 
         let searchTerms = document.getElementById("searchfld").value;
 
         if (searchTerms == "honda") {
-            document.getElementById("searchResultsDiv").innerHTML = carInfo[0].make;
+            document.getElementById("searchResultsDiv").innerHTML = "still working on it"
         }
         else if (searchTerms == "toyota") {
-            document.getElementById("searchResultsDiv").innerHTML = carInfo[1].year +" " +carInfo[1].make;
+            document.getElementById("searchResultsDiv").innerHTML = carInfoJson.Results[0].Mfr_Name;
         }
         else {
             document.getElementById("searchResultsDiv").innerHTML = "ya stupid";
