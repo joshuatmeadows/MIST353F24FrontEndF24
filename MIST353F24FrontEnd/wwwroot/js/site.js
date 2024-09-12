@@ -11,7 +11,7 @@ async function fetchInfo() {
 
     let productNutrientLevels = data.product.nutrient_levels
 
-    let text = '<table class="table table-striped"><tr><th>Key</th><th>Value</th></tr>'
+    let text = '<table><tr><th>Key</th><th>Value</th></tr>'
 
     for (let key in productNutrientLevels) {
         text += `<tr><td>${key}</td><td>${productNutrientLevels[key]}</td></tr>`
